@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'routes/app_routes.dart'; // Importar el router
 
 void main() {
   runApp(const PaqueteriaApp());
@@ -9,14 +10,13 @@ class PaqueteriaApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Logística TWAM',
+      routerConfig: appRouter, // Usar la configuración del router
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.light(), // Aquí conectarán su diseño de Figma después
-      home: const Scaffold(
-        body: Center(
-          child: Text('Proyecto Paquetería TWAM - Entorno Limpio'),
-        ),
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
+        useMaterial3: true,
       ),
     );
   }
